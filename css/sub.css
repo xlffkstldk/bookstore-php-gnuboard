@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+/* 서브 컨텐츠만 작성함 */
+
+
+/* mobile device */
+@media screen and (min-width: 320px),
+screen and (min-height: 320px) and (orientation: landscape) {
+  .sub-visual, .location {
+    display:none;
+  }
+  .m-h2 {
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+
+
+  .sub-wrap {
+    padding: 20px 10px;
+    width: calc(100vw - 20px);
+    margin: 0 auto;
+    min-height: 100%;
+    line-height:24px;
+  }
+}
+
+/* tablet device */
+@media screen and (min-width:768px),
+screen and (min-height:768px) and (orientation:landscape) {
+
+  .m-h2 {
+    display:none;
+  }
+  .sub-visual {
+    height:200px;
+    display:block;
+    position:relative;
+  }
+  .sub-h2 {
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    line-height:26px;
+    text-align:right;
+
+  }
+  .sub-h2 span {
+    font-size:24px;
+    color:#fff;
+    font-family: '나눔 고딕', Nanum Gothic
+  }
+  .visual01 {
+    background:url('../images/visual01.jpg') no-repeat center/cover;        
+  }
+  .location {
+    display:block;
+    height:30px;
+    border-bottom:1px solid #EEEEEE;
+  }
+  .home {
+    width:30px;
+    height:30px;
+    display:inline-block;
+    background-color:#29b7c0;
+    text-align:center;
+    vertical-align:middle;
+    margin-top:-4px;
+  }
+  .fa-home {
+    color:#fff;
+    padding-top:8px;
+  }
+  .fa-home.fa-2x {
+    display: none;
+  }
+  .fa-home.fa-1g {
+    display: inline-block;
+  }
+  .depth1 {
+    padding:0 20px;
+    display:inline-block;
+    font-family: '나눔 고딕', Nanum Gothic;
+    font-weight:bold;
+  }
+  .tab {
+    display:inline-block;
+    font-size:0;
+  }
+  .tab-item {
+    display:inline-block;
+    font-size:16px;
+    border-right:1px solid #eee;
+    line-height:30px;
+    height:30px;        
+  }
+  .tab-btn {
+    color:#999;
+    padding:0 20px;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+  .tab-item:first-child {
+    border-left:1px solid #eee;
+  }
+  .tab-item.active {
+    background-color:#29b7c0;
+    font-weight:bold;
+
+  }
+  .tab-item.active .tab-btn {
+    color:#fff;
+  }
+
+
+}
+
+/* pc */
+@media screen and (min-width:1000px),
+screen and (min-height:1000px) and (orientation:landscape) {
+
+  .sub-visual {
+    height:300px;
+  }
+  .sub-h2 {
+    bottom:30px;
+    right:30px;
+    font-size:20px;
+    line-height:34px;
+
+  }
+  .sub-h2 span {
+    font-size:30px;
+  }
+  .location {
+    height:40px;
+  }
+  .location-wrap {
+    max-width:1000px;
+    margin:0 auto;
+    
+  }
+  .home {
+    width:40px;
+    height:40px;
+  }
+  .fa-home {
+    padding-top:4px;
+  }
+  .fa-home.fa-2x {
+    display: inline-block;
+  }
+  .fa-home.fa-lg {
+    display: none;
+  }
+  .depth1 {
+    padding:0 40px;
+  }
+  .tab-item {
+    
+    line-height:40px;
+    height:40px;        
+  }
+  
+   .sub-wrap {
+    max-width:1000px;
+    margin:0 auto;
+    min-height:100%;
+  } 
+
+}

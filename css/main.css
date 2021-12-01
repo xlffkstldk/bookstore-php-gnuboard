@@ -1,0 +1,415 @@
+@charset "utf-8";
+
+/* 메인 영역 컨텐츠만 작성함 */
+
+
+/* mobile device */
+@media screen and (min-width: 320px),
+screen and (min-height: 320px) and (orientation: landscape) {
+
+  /* 슬라이드를 위한 height 상속 */
+.container,
+.content-wrap{
+  min-height: 100%;
+}
+.banner-wrap,
+.main-banner {
+  height: 540px;
+}
+
+.bx-viewport,
+.bx-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+}
+
+.bxslider,
+.bxslider li {
+  height: 100% !important;
+  ;
+}
+
+.bxslider li {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.bx-wrapper .bx-viewport {
+  border: none !important;
+}
+
+.slide1 {
+  background-image: url('../images/main-banner1.jpg');
+}
+
+.slide2 {
+  background-image: url('../images/main-banner2.jpg');
+}
+
+.slide3 {
+  background-image: url('../images/main-banner3.jpg');
+}
+
+
+  /* 최신 도서 리스트 */
+  .latest-wrap {
+    margin-top:20px;
+    min-height:980px;
+  }
+  .lt-h2 {
+    text-align:center;
+    
+  }
+  .lt-h2 span{
+    text-align:center;
+    font-size:20px;
+    line-height:30px;
+    color:#1a5d62;
+    font-weight:700;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+  .lt-h2 img, .lt-p {
+    display:none;
+  }
+  .latest-list {
+    padding:20px;
+  }
+  .p-latest-img, .p-recomm-img {
+    display:none;
+  }
+  .m-latest-img, .m-recomm-img {
+    display:block;
+    width:100%;
+    height:auto;          
+  }
+
+  .book-info {
+    font-size:18px;
+    text-align:center;
+    line-height:30px;
+    font-weight:600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+  }
+  .writer {
+    display: block;
+    font-size:15px;
+    font-weight: 500;
+    color:#888;
+  }
+  .writer:before {
+    content:'<';
+    font-size:15px;
+  }
+  .writer:after {
+    content:'>';
+    font-size:15px;
+  }
+  .lt-morelink {
+    margin:0 20px 15px;
+    background-color:#1F7E84;
+    font-size:16px;
+    line-height:60px;
+    text-align:center;
+  }
+  .lt-morelink span {
+    color:#fff;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+  .lt-morelink img {
+    vertical-align: middle;
+  }
+  .thumb-wrap {
+    position:relative;
+  }
+  .thumb-wrap:after {
+    position:absolute;
+    top:0;left:0;right:0;bottom:2px;
+    content:'';
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+    /* 추천 도서 리스트 */
+    .recomm-wrap {
+      margin-top:20px;
+      min-height:980px;
+    }
+    .rc-h2 {
+      text-align:center;
+    }
+    .rc-h2 span{
+      text-align:center;
+      font-size:20px;
+      line-height:30px;
+      color:#1a5d62;
+      font-weight:700;
+      font-family: '나눔 고딕', Nanum Gothic;
+    }
+    .rc-h2 img, .rc-p {
+      display:none;
+    }
+    .recomm-list {
+      padding:20px;
+    }
+    .recomm-img {
+      width:100%;
+      height:auto;          
+    }
+   
+    .rc-morelink {
+      margin:0 20px 15px;
+      background-color:#999;
+      font-size:16px;
+      line-height:60px;
+      text-align:center;
+    }
+    .rc-morelink span {
+      color:#fff;
+      font-family: '나눔 고딕', Nanum Gothic;
+    }
+    .rc-morelink img {
+      vertical-align: middle;
+    }
+    .cafe-wrap {
+      margin-top:20px;
+      min-height:calc(100vw * 0.5 + 60px) ;
+    }
+    .cf-h2 {
+      text-align:center;
+      font-size:20px;
+      line-height:60px;
+      color:#000;
+      font-weight:700;
+      font-family: '나눔 고딕', Nanum Gothic;
+    }
+    .cf-h2 span{
+      color:#843618;
+      font-size:24px;
+      font-family: 'MaruBuri-Regular'
+    }
+    .menu-list {
+      position:relative;
+    }
+    .menu-item {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+    }
+    .menu-img {
+      width:100%;
+    }
+}
+
+/* tablet device */
+@media screen and (min-width:768px),
+screen and (min-height:768px) and (orientation:landscape) {
+
+  .banner-wrap,
+  .main-banner {
+    height: 600px;
+  }
+  
+  /* 최신 도서 리스트 */
+  .latest-wrap, .recomm-wrap {
+    min-height:380px;
+  }
+  .latest-list, .recomm-list {
+    padding:0;
+    margin-top:20px;
+    overflow:hidden;
+  }
+
+  .latest-item , .recomm-item{
+    float:left;
+    width:32%;
+    margin-left:1%;    
+  }
+  
+  .latest-item:nth-child(3n), .recomm-item:nth-child(3n) {
+    margin-right:1%;
+  }
+  .book-info {  
+    margin-top:10px;  
+    font-size:16px;
+    line-height:24px;
+  }
+  .writer {
+    font-size:14px;
+  }
+
+  .lt-morelink, .rc-morelink {
+    margin:20px 1%;
+    line-height:60px;
+  }
+
+  .cf-h2 {
+    text-align:center;
+    font-size:24px;
+    line-height:60px;
+    color:#000;
+    font-weight:700;
+    font-family: '나눔 고딕', Nanum Gothic;
+    margin-bottom:10px;
+  }
+  .cf-h2 span{
+    color:#843618;
+    font-size:26px;
+    font-family: 'MaruBuri-Regular';
+  }
+  .menu-list {
+    position:relative;
+  }
+  .menu-item {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+  }
+  .menu-img {
+    width:100%;
+  }
+
+}
+
+/* pc */
+@media screen and (min-width:1000px),
+screen and (min-height:1000px) and (orientation:landscape) {
+  .main-banner ,.recomm-wrap{
+    min-width:1000px;
+  }
+  .latest-wrap,  .cafe-wrap , .recomm-box{
+    max-width:1000px;
+    margin:0 auto;
+  }
+  .cafe-wrap {
+    min-height:540px;
+  }
+  .recomm-wrap {
+    background-color:#efefef;
+  }
+
+  .bxslider li {
+    background-position: center center;
+  }
+    /* 최신 도서 리스트 */
+    .latest-wrap, .recomm-wrap {
+      min-height:330px;
+    }
+
+  .latest-wrap, .recomm-box  {
+    padding:25px 30px 0 30px;
+    position:relative;
+  }
+  .recomm-box {
+    padding-left:70px;
+  }
+  .lt-title-wrap {
+    width:150px;
+    height:276px;    
+    float:left;
+  }
+  .rc-title-wrap {
+    width:150px;
+    height:276px;    
+    float:right;
+  }
+  .lt-h2 img , .rc-h2 img{
+    display:inline;
+    width:30px;
+    vertical-align: bottom;
+    transform:rotate(40deg);
+  }
+  .lt-p, .rc-p {
+    display:block;
+    padding:10px;
+    color:#000;  
+    line-height: 26px;
+    font-family: '나눔 고딕', Nanum Gothic;
+    margin-top:20px;
+  }
+  .latest-list ,.recomm-list{
+    margin-top:0;
+  }
+
+  .latest-item ,.recomm-item{
+    display:inline-block;
+    width:230px;
+    height:276px;    
+    border-radius: 10px;  
+  }
+  .latest-item {
+    margin-left:20px;  
+  }
+  .recomm-item {
+    margin-right:20px;  
+    margin-left:unset;
+  }
+  .latest-item:nth-child(3n), .recomm-item:nth-child(3n) {
+    margin-right:unset;
+  }
+
+  .m-latest-img, .m-recomm-img {
+    display:none;
+  }
+  .p-latest-img, .p-recomm-img {
+    display:block;
+    width:100%;
+    height:auto;   
+    border-radius:10px;       
+  }
+  .lt-morelink {
+    position:absolute;
+    width:140px;
+    height:50px;
+    right:20px;
+    top:120px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    line-height:50px;
+  }
+  .rc-morelink{
+    position:absolute;
+    width:140px;
+    height:50px;
+    left:20px;
+    top:120px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    line-height:50px;
+  }
+  .thumb-wrap:after {
+    position:absolute;
+    content:'';
+    background-color:rgba(0, 0, 0, 0.1);
+    border: 0;
+    bottom:0;
+    border-radius:10px;  
+  }
+  .latest-link , .recomm-link{
+    position:relative;
+  }
+  .book-info {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+    color:#fff;
+    font-weight:500;    
+  }
+  .writer {
+    color:#d1caca;
+  }
+
+  .cf-h2 {
+    font-size:20px;
+  }
+  .cf-h2 span{
+    font-size:24px;
+  }
+}

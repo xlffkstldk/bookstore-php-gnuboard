@@ -1,0 +1,674 @@
+@charset "utf-8";
+@import url('reset.css');
+/* 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+@font-face {
+  font-family: 'MaruBuri-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 모든 해상도를 위한 공통 코드작성 */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #fff;
+}
+
+* {
+  font-size: 16px;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  font-family: '나눔 고딕', Nanum Gothic, '돋움', Dotum, sans-serif;
+}
+
+body,
+a,
+span,
+p {
+  font-family: 'MaruBuri-Regular', '나눔 고딕', Nanum Gothic, '돋움', Dotum, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* 헤더 영역 시작 */
+
+
+/* 헤더 영역 끝 */
+.container {
+  min-height: 100%;
+}
+
+.footer {
+  min-height: 105px;
+  background-color: #513023;
+}
+
+
+/* 푸터 */
+.footer-wrap {
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #513023;
+}
+
+/* 최상단 팝업 */
+.pop {
+  position: relative;
+  height: 45px;
+  background-color: #843618;
+  text-align: center;
+
+}
+
+.pop-wrap {
+  line-height: 45px;
+
+  font-size: 16px;
+}
+
+.pop-title {
+  float: left;
+  width: calc(100% - 100px);
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 20px;
+  font-family: '나눔 고딕', Nanum Gothic;
+}
+
+.pop-more {
+  float: left;
+  color: #29b7c0;
+}
+
+.pop-close {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  right: 10px;
+  top: 4px;
+}
+
+.pop-close img {
+  width: 20px;
+}
+
+/* mobile device */
+@media screen and (min-width: 320px),
+screen and (min-height: 320px) and (orientation: landscape) {
+
+  .header {
+    height: 70px;
+  }
+
+  .header-wrap:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  .menu-icon {
+    float: left;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+  }
+
+  .menu-icon img {
+    width: 30px;
+    vertical-align: middle;
+  }
+
+  .logo {
+    float: left;
+    width: calc(100% - 130px);
+    height: 70px;
+    display: table;
+    table-layout: fixed;
+  }
+
+  .logo-link {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  .logo-name {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color:#29b7c0;
+  }
+
+  .search-link {
+    float: right;
+    width: 60px;
+    height: 70px;
+    text-align: center;
+  }
+
+  .search-icon {
+    margin-top: 20px;
+  }
+
+  /* 모바일 메뉴 슬라이딩 */
+  .menu {
+    position: absolute;
+    top: 70px;
+    z-index: 100;
+    width: 70%;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transition: transform 500ms ease-out;
+    will-change: transform;
+  }
+  .pmenu, .pmain-nav {
+    display:none;
+  }
+  .main-nav {
+    display:block;
+    width: 100%;
+    position: relative;
+    background-color: #f8f9f9;
+  }
+
+  .move {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    /* let the browser know we plan to animate
+      each view in and out 부드러운 전환을 위해 필수 */
+    transition: transform 500ms ease-out;
+    will-change: transform;
+  }
+
+  .main-link {
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #efefef;
+    font-weight: 600;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .sub-nav, .sub-nav2 {
+    display: none;
+  }
+
+  .sub-item {
+    line-height: 40px;
+    padding-left: 40px;
+    background: #e0e0e0;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .sub-link {
+    font-size: 16px;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .sub-last {
+    border-bottom-right-radius: 15px;
+  }
+
+  .main-item:first-child {
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    z-index: 200;
+    top: 16px;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+  }
+
+  .close-icon {
+    width: 100%;
+  }
+
+  .mobile-dimmed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 10;
+  }
+
+  /* 푸터 요소 */
+  .contact {
+    margin:0 auto 20px;
+  }
+
+  .f-h2 {
+    font-size: 18px;
+    font-family: '나눔 고딕', Nanum Gothic;
+    line-height: 30px;
+    color: rgba(239, 239, 239, 0.5);
+    font-weight: 400;
+  }
+
+  .ct-info {
+    list-style: disc;
+    margin-left: 20px;
+    width:200px;
+    display:inline-block;
+  }
+
+  .ct-info li {
+    font-size: 16px;
+    color: rgba(239, 239, 239, 0.5);
+    line-height: 22px;
+    text-align: left;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .sns li {
+    width: 40px;
+    display: inline-block;
+  }
+
+  .sns li.flogo {
+    width: auto;
+  }
+
+  .flogo-img {
+    width: auto;
+    height: 33px;
+
+  }
+
+  .flink {
+    clear: both;
+    margin: 20px auto;
+    width: 150px;
+  }
+
+  .flink-list {
+    list-style: disc;
+    padding-left: 20px;
+
+  }
+
+  .flink-item,
+  .flink-item a,
+  .flink-item strong {
+    font-size: 15px;
+    color: rgba(239, 239, 239, 0.5);
+    line-height: 20px;
+    text-align: left;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .flink-item strong {
+    color: #efefef;
+  }
+
+  .address,
+  .copy {
+    font-size: 13px;
+    color: rgba(239, 239, 239, 0.5);
+    font-family: '나눔 고딕', Nanum Gothic;
+    line-height: 20px;
+  }
+
+  .company {
+    font-weight: bold;
+    color: rgba(239, 239, 239, 0.5);
+  }
+
+}
+
+/* tablet device */
+@media screen and (min-width:768px),
+screen and (min-height:768px) and (orientation:landscape) {
+  .menu-icon {
+    display: none;
+  }
+
+  .logo {
+    display: block;
+    width: 136px;
+    table-layout: unset;
+    padding: 10px 20px;
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  /*메뉴 초기화 */
+  .pmenu {
+    display:block;
+    float: left;
+    top: unset;
+    z-index: unset;
+    transform: unset;
+    -webkit-transform: unset;
+    transition: unset;
+    will-change: unset;
+    box-sizing: border-box;
+    height: 70px;
+    text-align: center;
+    margin-left: 136px;
+  }
+
+  .menu, .main-nav {
+    display:none;
+  }
+  .move {
+    transform: unset;
+    -webkit-transform: unset;
+    display: none;
+  }
+
+  .sub-bg {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background-color: #29b7c0;
+    z-index: 1000;
+  }
+
+  .pmain-nav {
+    display:block;
+    line-height: 70px;
+    display: inline-block;
+    width: auto;
+    background-color: #fff;
+  }
+
+  .main-item {
+    display: table-cell;
+    position: relative;
+  }
+
+  .main-link {
+    padding: 0 10px;
+    line-height: 70px;
+    font-family: '나눔 고딕', Nanum Gothic;
+    border-bottom: unset;
+  }
+
+  .bk-store {
+    color: #29B7C0;
+    font-size: 18px;
+  }
+
+  .cf-store {
+    color: #843618;
+    font-size: 18px;
+  }
+
+  .sub-nav, .sub-nav2 {
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    top: 70px;
+    text-align: center;
+  }
+
+  .sub-item {
+    float: left;
+    background-color: #29b7c0;
+    border-bottom: none;
+    padding-left: 0;
+
+  }
+
+  .sub-link {
+    min-width: 120px;
+    color: #fff;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .sub-link:hover:before {
+    content: '·  ';
+    color: #fff;
+    font-weight: bold;
+
+  }
+
+  .close {
+    display: none;
+  }
+
+  .sub-last {
+    border-bottom-right-radius: unset;
+  }
+
+  .mobile-dimmed {
+    display: none;
+  }
+
+  .slide1-p {
+    bottom: 8%;
+    font-size: 22px;
+    line-height: 38px;
+  }
+
+  /* 푸터 요소 */
+
+  .contact {
+    float: left;
+    width: 50%;
+  }
+
+  .f-h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+
+  .sns-wrap {
+    float: right;
+  }
+
+  .flink {
+    clear: right;
+  }
+
+  .address {
+    clear: both;
+  }
+
+
+  .contact {
+    margin-bottom: 20px;
+  }
+
+  .f-h2 {
+    font-size: 20px;
+    font-family: '나눔 고딕', Nanum Gothic;
+    line-height: 30px;
+    color: rgba(239, 239, 239, 0.5);
+    font-weight: 400;
+  }
+
+  .ct-info {
+    list-style: disc;
+    margin-left: 20px;
+    width:unset;
+    display:block;
+  }
+
+  .ct-info li {
+    font-size: 16px;
+    color: rgba(239, 239, 239, 0.5);
+    line-height: 22px;
+    text-align: left;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .flogo {
+    width: 40%;
+    height: auto;
+    margin-left: 10px;
+    float: left;
+  }
+
+  .flogo-img {
+    width: calc(100% - 10px);
+  }
+
+  .flink {
+    float: right;
+    /* width: calc(60% - 20px); */
+    width:140px;
+    margin:0;
+  }
+
+  .flink-list {
+    list-style: disc;
+    padding-left: 20px;
+  }
+
+  .flink-item,
+  .flink-item a,
+  .flink-item strong {
+    font-size: 15px;
+    color: rgba(239, 239, 239, 0.5);
+    line-height: 20px;
+    text-align: left;
+    font-family: '나눔 고딕', Nanum Gothic;
+  }
+
+  .flink-item strong {
+    color: #efefef;
+  }
+
+  .sns-wrap {
+    /* clear: both; */
+    margin: 0 auto 20px;
+  }
+
+  .sns li {
+    width: 40px;
+    display: inline-block;
+  }
+
+  .address,
+  .copy {
+    font-size: 13px;
+    color: rgba(239, 239, 239, 0.5);
+    font-family: '나눔 고딕', Nanum Gothic;
+    line-height: 20px;
+  }
+
+  .company {
+    font-weight: bold;
+    color: rgba(239, 239, 239, 0.5);
+  }
+}
+
+/* pc */
+@media screen and (min-width:1000px),
+screen and (min-height:1000px) and (orientation:landscape) {
+
+  .header {
+    height: 70px;
+  }
+
+  .header-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 70px;
+  }
+
+  .pmenu {
+    max-width: 800px;
+    margin-left: 50px;
+  }
+
+  .main-link {
+    padding: 0 30px;
+    font-size: 18px;
+    border-bottom: unset;
+  }
+
+  .slide1-p {
+    bottom: 8%;
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  .sub-nav, .sub-nav2 {
+    display: none;
+  }
+
+  .sub-link {
+    min-width: 140px;
+
+  }
+
+  .bk-store {
+    color: #29B7C0;
+    font-size: 20px;
+  }
+
+  .cf-store {
+    color: #843618;
+    font-size: 20px;
+  }
+
+  .footer-wrap {
+    position: relative;
+    max-width:1000px;
+  }
+
+  .sns-wrap {
+    clear: unset;
+
+  }
+
+  .flink {
+    float: unset;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    width: unset;
+    margin:20px 0;
+  }
+
+  .f-h2 {
+    font-size: 18px;
+  }
+}
