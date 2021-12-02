@@ -23,22 +23,29 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 */
 
 $menu_datas = get_menu_db(0, true); //DB에서 메뉴 리스트 가져오기 
+
+
+if(isset($bo_table) && !empty($bo_table)) { //게시판인경우
+  $request_url = "/bbs/board.php?bo_table=".$bo_table;
+} else if(isset($co_id) && !empty($co_id)) {
+  $request_url = "/bbs/content.php?co_id=".$co_id;
+} else {
+  $request_url = $_SERVER['PHP_SELF'];
+}
+
 ?>
   <!-- 공지사항 게시물에서 가져오도록 할것 -->
-  <div class="pop">
-    <div class="pop-wrap">
-      <span class="pop-title">카페 '겨를' 11월 할인 이벤트! 텀블러를 가져오시면 20% 할인해드려요.</span>
-      <a href="#" class="pop-more">더보기</a>
-      <a href="#" class="pop-close"><img src="<?php echo G5_URL ?>/images/close-x.png" alt="팝업 닫기" width="20" height="20"></a>
-    </div>
-  </div>
+<?php
+echo latest('notice02', 'notice', 1, 100);		// 최소설치시 자동생성되는 공지사항게시판
+?>
   <header class="header">
     <div class="header-wrap">
       <a href="#" class="menu-icon"><img src="<?php echo G5_URL ?>/images/menu.png" alt="전체 메뉴"></a>
       <h1 class="logo">
-        <a href="/" class="logo-link"><img src="<?php echo G5_URL ?>/images/logo.png" alt="" width="96" height="50"></a>
+        <a href="/" class="logo-link" ><img src="<?php echo G5_URL ?>/images/logo.png"  alt="" width="96" height="50"></a>
         <span class="logo-name">책방 '겨를'</span>
       </h1>
+
       <nav class="pmenu">
         <ul class="pmain-nav sub-last">
         <?php
@@ -123,7 +130,16 @@ $menu_datas = get_menu_db(0, true); //DB에서 메뉴 리스트 가져오기
 <div class="content-wrap">
 <?php if (!defined("_INDEX_")) { 
   //서브페이지 인경우 소스코드 출력 시작 
+  $sql = " select * from {$g5['menu_table']} where me_link = '".$request_url."' ";
+  $npage = sql_fetch($sql);
+  $pcode = substr($npage['me_code'],0,2);
+  //부모메뉴
+  $sql = " select * from {$g5['menu_table']} where me_code = '".$pcode."' and me_use = 1 and length(me_code) = 2 order by me_order asc ";
+  $prow = sql_fetch($sql);
   
+  $sql = " select * from {$g5['menu_table']} where me_code like '".$pcode."%' and me_use = 1 and length(me_code) = 4 order by me_order asc ";
+  $mresult = sql_query($sql);
+
 ?>
     <div class="sub-visual visual01">
       <h2 class="sub-h2">ABOUT BOOK STORE <br>
@@ -133,21 +149,23 @@ $menu_datas = get_menu_db(0, true); //DB에서 메뉴 리스트 가져오기
     <div class="location">
       <div class="location-wrap">
       <span class="home"><i class="fa fa-home fa-2x" aria-hidden="true"></i><i class="fa fa-home fa-lg" aria-hidden="true"></i></span>
-      <span class="depth1">책방 '겨를'</span>
+
+      <span class="depth1"><?php echo($prow['me_name']); ?></span>
       <ul class="tab">
-          <li class="tab-item">
-            <a href="#" class="tab-btn">공지사항</a>
+      <?php
+      for ($i=0; $crow=sql_fetch_array($mresult); $i++)
+      {
+      ?>  
+          <li class="tab-item <?php if($crow['me_link'] == $request_url) { ?>active<?php } ?>"   >
+            <a href="<?php echo($crow['me_link']); ?>" class="tab-btn"><?php echo($crow['me_name']); ?></a>
           </li>
-          <li class="tab-item active">
-            <a href="#" class="tab-btn">책방 소개</a>
-          </li>
+      <?php
+      }
+      ?>
         </ul>
       </div>
     </div>
-    <h2 class="m-h2">책방 소개</h2>
-    <style>
-
-    </style>
+    <h2 class="m-h2"><?php echo($npage['me_name']); ?></h2>
     <div class="sub-wrap">
    
 

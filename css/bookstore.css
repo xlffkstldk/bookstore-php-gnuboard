@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('reset.css');
+
 /* 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
@@ -11,9 +11,6 @@
 }
 
 /* 모든 해상도를 위한 공통 코드작성 */
-* {
-  box-sizing: border-box;
-}
 
 html,
 body {
@@ -95,13 +92,16 @@ a {
   float: left;
   width: calc(100% - 100px);
   color: #fff;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  
   padding-left: 20px;
   font-family: '나눔 고딕', Nanum Gothic;
 }
-
+.pop-title a {
+  color:#fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pop-more {
   float: left;
   color: #29b7c0;
@@ -619,9 +619,33 @@ screen and (min-height:1000px) and (orientation:landscape) {
   }
 
   .main-link {
-    padding: 0 30px;
+    /* padding: 0 30px; */
+    padding:0 0 10px 0;
+    display:inline;
+    margin:0 30px;
     font-size: 18px;
-    border-bottom: unset;
+    position:relative;
+    /*border-bottom: 2px solid #000;
+    border-bottom-width: 0; */
+  }
+  .main-link:before {
+    position:absolute;
+    content:'';
+    display:block;
+    width:0;
+    height:5px;
+    bottom:0;
+    left:0;
+    background-color:#69e4ec;
+  }
+  .main-link:hover:before {
+    width: 100%;
+    transition:width 0.5s ease-out;
+  }
+  /* 마우스오버 떠날때 주는 효과 */
+  .main-link:not(:hover):before {
+    width: 0;
+    transition:width 1s ease-out;
   }
 
   .slide1-p {

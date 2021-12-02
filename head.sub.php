@@ -67,13 +67,20 @@ if (defined('G5_IS_ADMIN')) {
     echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
 }
 ?>
- <link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/jquery.bxslider.css">
+<?php 
+//관리자모드는 아래 css를 제외시킴.
+if (substr($_SERVER['PHP_SELF'],0,4) != "/adm") { ?>
+
 <link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/bookstore.css">
 <?php if (!defined("_INDEX_")) {  ?>
 <link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/sub.css">
 <?php } else { ?>
+<link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/jquery.bxslider.css">    
 <link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/main.css">
 <?php } ?>
+
+<?php } ?>
+
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
 <![endif]-->

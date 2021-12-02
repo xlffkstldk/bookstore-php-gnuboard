@@ -11,7 +11,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$content_skin_url.'/style.css">',
     </header>
 
     <div id="ctt_con">
-        <?php echo $str; ?>
+        <?php echo $str; ?> 
     </div>
 
 </article>

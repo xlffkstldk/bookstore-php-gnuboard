@@ -16,17 +16,52 @@ screen and (min-height: 320px) and (orientation: landscape) {
     font-weight: bold;
     margin: 20px 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #cdcdcd;
+    border-bottom: 1px solid #333;
   }
 
 
   .sub-wrap {
-    padding: 20px 10px;
+    padding: 0 10px 20px;
     width: calc(100vw - 20px);
     margin: 0 auto;
     min-height: 100%;
     line-height:24px;
   }
+  .sub-wrap img {
+    width:100%;
+    height:auto;
+  }
+        /* 서브 페이지 헤딩 */
+        .ct-h2 {
+          display: flex;
+          flex-basis: 100%;
+          align-items: center;
+          color: #333;
+          font-size: 20px;
+          margin: 30px 0px ;
+      }
+      .ct-h2:after {
+          content: "";
+          flex-grow: 1;
+          background: #cdcdcd;
+          height: 1px;
+          font-size: 0px;
+          line-height: 0px;
+          margin: 0 1px 0 10px;
+      }
+    .ct-p {
+      font-size:20px;
+      line-height:36px;
+    }
+    .ct-p2 {
+      font-size:18px;
+      line-height:30px;
+    }
+    .ct-ul {
+      margin:20px 0;
+      list-style:disc;
+      padding-left:20px;
+    }
 }
 
 /* tablet device */
